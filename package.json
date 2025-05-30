@@ -4,35 +4,39 @@
   "description": "",
   "type": "module",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsdown",
+    "watch": "tsdown --watch",
     "lint": "biome check",
     "lint:fix": "biome check --fix",
     "type": "tsc --noEmit",
     "test": "vitest run",
-    "exports:check": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:publish": "changeset publish",
     "release:local": "pnpm changeset:version && pnpm changeset:publish"
   },
-  "keywords": [
-    "typescript"
-  ],
+  "keywords": ["typescript"],
   "author": "e5pe0n",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/e5pe0n/ts-lib.git"
   },
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
-  "packageManager": "pnpm@10.11.0",
+  "files": ["dist"],
+  "packageManager": "pnpm@10.17.0",
   "devDependencies": {
-    "@arethetypeswrong/cli": "0.18.1",
+    "@arethetypeswrong/core": "0.18.2",
     "@biomejs/biome": "1.9.4",
     "@changesets/cli": "2.29.4",
+    "tsdown": "0.15.3",
     "typescript": "5.8.3",
     "vitest": "3.1.4"
   }
