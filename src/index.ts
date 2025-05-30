@@ -8,7 +8,7 @@
  * ```
  */
 export type Omit_<T, U extends keyof T> = {
-	[Prop in keyof T as Exclude<Prop, U>]: T[Prop];
+  [Prop in keyof T as Exclude<Prop, U>]: T[Prop];
 };
 
 /**
@@ -22,9 +22,9 @@ export type Omit_<T, U extends keyof T> = {
  * ```
  */
 export type Override<T, U extends { [Prop in keyof T]?: unknown }> = {
-	[Prop in keyof T as Exclude<Prop, keyof U>]: T[Prop];
+  [Prop in keyof T as Exclude<Prop, keyof U>]: T[Prop];
 } & {
-	[Prop in keyof U]: U[Prop];
+  [Prop in keyof U]: U[Prop];
 };
 
 /**
@@ -47,19 +47,19 @@ export function range(stop: number): number[];
  */
 export function range(start: number, stop: number, step: number): number[];
 export function range(start: number, stop?: number, step?: number): number[] {
-	// in case overload1, start = stop (the first arg), stop = undefined, step = undefined
-	const _start = stop ? start : 0;
-	const _stop = stop ?? start;
-	const _step = step ?? 1;
+  // in case overload1, start = stop (the first arg), stop = undefined, step = undefined
+  const _start = stop ? start : 0;
+  const _stop = stop ?? start;
+  const _step = step ?? 1;
 
-	if (_step === 0) {
-		throw new RangeError(
-			`invalid argument: step must not be 0. step=${_step} given.`,
-		);
-	}
+  if (_step === 0) {
+    throw new RangeError(
+      `invalid argument: step must not be 0. step=${_step} given.`,
+    );
+  }
 
-	const len = Math.ceil((_stop - _start) / _step);
-	return len <= 0
-		? []
-		: Array.from(new Array(len), (_, i) => _start + i * _step);
+  const len = Math.ceil((_stop - _start) / _step);
+  return len <= 0
+    ? []
+    : Array.from(new Array(len), (_, i) => _start + i * _step);
 }
