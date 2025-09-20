@@ -1,9 +1,10 @@
 {
   "name": "@e5pe0n/ts-lib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -20,7 +21,7 @@
     "test": "vitest run",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish",
+    "changeset:publish": "pnpm build && changeset publish",
     "release:local": "pnpm changeset:version && pnpm changeset:publish"
   },
   "keywords": ["typescript"],
