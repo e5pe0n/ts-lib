@@ -45,7 +45,7 @@ export function range(stop: number): number[];
  * range(5, 0, -2); // [5, 3, 1]
  * ```
  */
-export function range(start: number, stop: number, step: number): number[];
+export function range(start: number, stop: number, step?: number): number[];
 export function range(start: number, stop?: number, step?: number): number[] {
   // in case overload1, start = stop (the first arg), stop = undefined, step = undefined
   const _start = stop ? start : 0;
