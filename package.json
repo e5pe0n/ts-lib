@@ -23,18 +23,14 @@
     "changeset:publish": "changeset publish",
     "release:local": "pnpm changeset:version && pnpm changeset:publish"
   },
-  "keywords": [
-    "typescript"
-  ],
+  "keywords": ["typescript"],
   "author": "e5pe0n",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/e5pe0n/ts-lib.git"
   },
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "packageManager": "pnpm@10.17.0",
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.2",
