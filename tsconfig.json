@@ -1,17 +1,21 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    /* If transpiling with TypeScript: */
-    "module": "NodeNext",
-    "outDir": "dist",
-    "rootDir": "src",
-    "sourceMap": true,
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
 
-    /* AND if you're building for a library: */
-    "declaration": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
 
-    /* AND if you're building for a library in a monorepo: */
-    "declarationMap": true
+    "module": "NodeNext"
   },
-  "include": ["src"]
+  "include": ["src", "tsdown.config.ts"]
 }
