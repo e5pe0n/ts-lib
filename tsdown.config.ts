@@ -6,4 +6,5 @@ export default defineConfig({
   failOnWarn: true,
   format: ["esm", "cjs"],
   dts: true,
+  tsconfig: "./tsconfig.build.json",
 });
